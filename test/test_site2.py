@@ -3,7 +3,7 @@ import os
 from lib.http import TestHTTP 
 
 
-class TestCtrl(TestHTTP):
+class Test(TestHTTP):
 
     def setUp(self):
 
@@ -11,8 +11,8 @@ class TestCtrl(TestHTTP):
         error_log  logs/error.log debug;
         events {}
         http {
-            lua_package_path '/tmp/nginxlab/lua/?.lua;;';
-            lua_package_cpath '/tmp/nginxlab/lua/?.so;;';
+            lua_package_path '/usr/local/nginx/lua/?.lua;;';
+            lua_package_cpath '/usr/local/nginx/lua/?.so;;';
             server {
                 listen  127.0.0.1:7080;
 
@@ -33,4 +33,4 @@ class TestCtrl(TestHTTP):
 
 
 if __name__ == '__main__':
-    TestCtrl.main()
+    Test.main()
